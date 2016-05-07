@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div id="buttonsContainer">
+		<button class="ui-btn ui-shadow ui-corner-all fileinput-button" id="dButton">
+			<p class="ui-icon-action ui-btn-icon-top">Zonas</p>
+			<input type="file" id="picker" onchange="load_file()" multiple data-role="none">
+		</button>
+		<button id="calendario" class="ui-btn ui-icon-calendar ui-btn-icon-top ui-corner-all ui-shadow ui-btn-inline">
+			<p id="pmes">Mes</p>
+		</button>
+		<button id="calcular" class="ui-btn ui-icon-info ui-btn-icon-top ui-corner-all ui-shadow ui-btn-inline">
+			<p id="pcal">Calcular</p>
+		</button>
+	</div>
+
+	<div data-role="popup" id="popupCalendar" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15">
+	    <a href="#" data-rel="back" class="ui-btn ui-btn-b ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+	    <div id="calendarioContainer">
+				<fieldset class="ui-grid-b">
+					<div class="ui-block-a"><input id="bene" type="button" value="Ene"></div>
+					<div class="ui-block-b"><input id="bfeb" type="reset" value="Feb"></div>
+					<div class="ui-block-c"><input id="bmar" type="submit" value="Mar"></div>
+				</fieldset>
+				<fieldset class="ui-grid-b">
+					<div class="ui-block-a"><input id="babr" type="button" value="Abr"></div>
+					<div class="ui-block-b"><input id="bmay" type="reset" value="May"></div>
+					<div class="ui-block-c"><input id="bjun" type="submit" value="Jun"></div>
+				</fieldset>
+				<fieldset class="ui-grid-b">
+					<div class="ui-block-a"><input id="bjul" type="button" value="Jul"></div>
+					<div class="ui-block-b"><input id="bago" type="reset" value="Ago"></div>
+					<div class="ui-block-c"><input id="bsep" type="submit" value="Sep"></div>
+				</fieldset>
+				<fieldset class="ui-grid-b">
+					<div class="ui-block-a"><input id="boct" type="button" value="Oct"></div>
+					<div class="ui-block-b"><input id="bnov" type="reset" value="Nov"></div>
+					<div class="ui-block-c"><input id="bdic" type="submit" value="Dic"></div>
+				</fieldset>
+			</div>
+	</div>
+
+	<div data-role="popup" id="markerPop" data-overlay-theme="a" data-theme="a" data-corners="false" data-tolerance="15,15">
+	    <a href="#" data-rel="back" class="ui-btn ui-btn-b ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+	    <div id="markerContainer">
+			</div>
+	</div>
+
+	<div id="container">
+		<div id="map-canvas" style="width:100%; height:100%"></div>
+	</div>
+
+<script src="jquery/jquery-1.12.3.min.js"></script>
+<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=true"></script>
+<script src="js/gmaps.js"></script>
+<script src="js/ocrad.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
